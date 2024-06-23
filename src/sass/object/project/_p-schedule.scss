@@ -1,0 +1,137 @@
+@use "global" as *;
+
+.p-schedule {
+  background-color: $gray1;
+}
+
+.p-schedule__title {
+  @include mq(md) {
+    padding-left: myrem(17);
+    letter-spacing: myrem(-2);
+  }
+}
+
+.p-schedule__wrapper {
+  margin-top: myrem(25);
+  @include mq(md) {
+    margin-top: myrem(42);
+  }
+}
+
+.p-schedule__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: myrem(31);
+  @include mq(md) {
+    margin: 0 auto;
+    padding: 0 myrem(9) 0 myrem(10);
+    max-width: myrem(1020);
+    row-gap: myrem(6);
+  }
+}
+
+.p-schedule__item {
+  margin: 0 auto;
+  padding-bottom: myrem(20);
+  width: calc(344 / 375 * 100%);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $blue4;
+  @include mq(md) {
+    padding-bottom: 0;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+}
+
+.p-schedule__head {
+  width: myrem(85);
+  display: flex;
+  flex-direction: column;
+  row-gap: myrem(2);
+  @include mq(md) {
+    width: 46%;
+    flex-direction: row;
+    column-gap: myrem(5);
+  }
+}
+
+.p-schedule__date {
+  padding: myrem(35) 0;
+  font-size: myrem(16);
+  font-weight: bold;
+  color: $white;
+  background-color: $blue2;
+  text-align: center;
+  @include mq(md) {
+    padding: myrem(19) 0 0 myrem(23);
+    width: 92%;
+    font-size: myrem(20);
+    text-align: start;
+  }
+}
+
+.p-schedule__date--short {
+  padding: myrem(16) 0;
+  @include mq(md) {
+    padding: myrem(16) 0 0 myrem(22);
+  }
+}
+
+.p-schedule__time {
+  padding: myrem(22) 0 myrem(27) myrem(13);
+  font-size: myrem(16);
+  font-weight: bold;
+  color: $white;
+  background-color: $blue5;
+  @include mq(md) {
+    padding: myrem(22) 0 myrem(27) myrem(19);
+
+    width: 89%;
+    font-size: myrem(18);
+  }
+}
+
+.p-schedule__body {
+  padding: myrem(8) myrem(6) myrem(5) myrem(11);
+  width: calc(100% - myrem(85));
+  @include mq(md) {
+    width: 89%;
+    padding: myrem(20) myrem(21) myrem(23) myrem(24);
+  }
+}
+
+.p-schedule__body-title {
+  padding: 0 myrem(28) 0 myrem(6);
+  font-size: myrem(16);
+  font-weight: bold;
+  line-height: 1.3;
+  @include mq(md) {
+    font-size: myrem(20);
+  }
+}
+
+.p-schedule__body-text {
+  padding-top: myrem(11);
+  font-size: myrem(14);
+  @include mq(md) {
+    padding-top: myrem(4);
+    padding-left: myrem(4);
+    font-size: myrem(16);
+  }
+}
+
+.p-schedule__button {
+  margin-top: myrem(15);
+  padding: 0 myrem(20);
+  width: 100%;
+  display: flex;
+  column-gap: myrem(8);
+  @include mq(md) {
+    padding-right: myrem(20);
+    padding-left: 0;
+    width: 25%;
+    flex-direction: column;
+    row-gap: myrem(12);
+  }
+}

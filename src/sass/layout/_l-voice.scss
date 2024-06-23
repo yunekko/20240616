@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.l-voice {
+  margin-top: myrem(111);
+  padding-bottom: myrem(62);
+  @include mq(md) {
+    margin-top: myrem(146);
+    padding-bottom: myrem(119);
+  }
+}

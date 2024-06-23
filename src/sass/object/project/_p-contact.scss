@@ -1,0 +1,360 @@
+@use "global" as *;
+
+.p-contact {
+  background-color: $blue1;
+}
+
+.p-contact__title {
+  text-align: center;
+  font-size: myrem(24);
+  font-weight: bold;
+  color: $white;
+  @include mq(md) {
+    padding-left: myrem(18);
+    font-size: myrem(39.93);
+  }
+}
+
+.p-contact__title::before {
+  content: attr(data-en);
+  display: block;
+  font-family: $font-lato;
+  font-size: myrem(11);
+  font-weight: 700;
+  letter-spacing: myrem(0.8);
+  color: $white;
+  @include mq(md) {
+    font-size: myrem(20);
+    letter-spacing: myrem(1.4);
+  }
+}
+
+.p-contact__wrapper {
+  margin: myrem(42) auto 0;
+  padding-right: myrem(15);
+  padding-left: myrem(15);
+  max-width: myrem(580);
+  width: 100%;
+  @include mq(md) {
+    margin-top: myrem(57);
+    padding-right: myrem(80);
+    padding-left: myrem(80);
+    max-width: myrem(1160);
+  }
+}
+
+.p-contact__inner {
+  margin: 0 auto;
+  padding: myrem(28) myrem(15) myrem(29) myrem(20);
+  max-width: myrem(530);
+  width: 100%;
+  background-color: $white;
+  border-radius: myrem(15);
+  @include mq(md) {
+    padding: myrem(72) myrem(39) myrem(50) myrem(50);
+    max-width: myrem(1012);
+  }
+}
+
+.p-contact label,
+input,
+select,
+textarea {
+  @include mq(md) {
+    cursor: pointer;
+  }
+}
+
+.p-contact input[type="email"],
+.p-contact input[type="text"],
+.p-contact input[type="tel"],
+.p-contact select,
+.p-contact textarea {
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+.p-contact input[type="email"]:focus,
+.p-contact input[type="text"]:focus,
+.p-contact input[type="tel"]:focus,
+.p-contact select:focus,
+.p-contact textarea:focus {
+  border: 2px solid $blue1;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.p-contact__item {
+  @include mq(md) {
+    display: flex;
+  }
+}
+
+.p-contact__item-zipcode {
+  margin-top: myrem(19);
+  @include mq(md) {
+    margin-top: myrem(3);
+  }
+}
+
+.p-contact__item-address {
+  margin-top: myrem(15);
+  @include mq(md) {
+    margin-top: myrem(4);
+  }
+}
+
+.p-contact__item-department {
+  margin-top: myrem(17);
+  @include mq(md) {
+    margin-top: myrem(4);
+  }
+}
+
+.p-contact__item-name {
+  margin-top: myrem(17);
+  @include mq(md) {
+    margin-top: myrem(4);
+  }
+}
+
+.p-contact__item-reading {
+  margin-top: myrem(13);
+  @include mq(md) {
+    margin-top: myrem(4);
+  }
+}
+
+.p-contact__item-tel {
+  margin-top: myrem(18);
+  @include mq(md) {
+    margin-top: myrem(4);
+  }
+}
+
+.p-contact__item-mail {
+  margin-top: myrem(10);
+  @include mq(md) {
+    margin-top: myrem(4);
+  }
+}
+
+.p-contact__item-course {
+  margin-top: myrem(14);
+  @include mq(md) {
+    margin-top: myrem(7);
+  }
+}
+
+.p-contact__item-course {
+  font-size: myrem(16);
+  font-weight: bold;
+}
+
+.p-contact__item-message {
+  margin-top: myrem(21);
+  @include mq(md) {
+    margin-top: myrem(6);
+    align-items: baseline;
+  }
+}
+
+.p-contact__item-confirm {
+  margin-top: myrem(24);
+  padding: 0 0 0 myrem(8);
+  text-align: center;
+  @include mq(md) {
+    margin-top: myrem(31);
+  }
+}
+
+// ラベル
+.p-contact__label {
+  display: flex;
+  align-items: center;
+  font-size: myrem(16);
+  font-weight: bold;
+  @include mq(md) {
+    width: 19%;
+    font-size: myrem(18);
+  }
+}
+
+// 必須
+.p-contact__required {
+  padding: myrem(5) myrem(8);
+  font-size: myrem(11);
+  font-weight: 500;
+  color: $red;
+}
+
+// 回答
+.p-contact__answer {
+  margin-top: myrem(9);
+  padding: myrem(10) myrem(15);
+  width: 100%;
+  display: block;
+  font-size: myrem(16);
+  background-color: $blue4;
+  border-radius: myrem(8);
+  border: none;
+  @include mq(md) {
+    width: 81%;
+  }
+}
+
+.p-contact__answer-short {
+  @include mq(md) {
+    width: 29%;
+  }
+}
+
+.p-contact__answer-middle {
+  @include mq(md) {
+    width: 47%;
+  }
+}
+
+.p-contact__answer-select {
+  margin-right: myrem(6);
+  font-weight: normal;
+  @include mq(md) {
+    margin-right: myrem(11);
+  }
+}
+
+.p-contact__answer-message {
+  height: myrem(105);
+  @include mq(md) {
+    height: myrem(144);
+  }
+}
+
+// セレクトボックス
+select {
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:invalid {
+  color: $gray2;
+}
+
+.p-contact__select-box {
+  margin-top: myrem(5);
+  display: flex;
+  column-gap: myrem(17);
+  @include mq(md) {
+    margin-top: myrem(-6);
+    width: 34%;
+  }
+}
+
+.p-contact__select-inner {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+
+.p-contact__select-inner1 {
+  width: 38%;
+  @include mq(md) {
+    width: 51%;
+  }
+}
+
+.p-contact__select-inner2 {
+  width: 29%;
+  @include mq(md) {
+    width: 31%;
+  }
+}
+
+.p-contact__select-inner::before {
+  position: absolute;
+  top: myrem(28);
+  right: myrem(30);
+  width: 0;
+  height: 0;
+  border-width: 12px 7px 0 6px;
+  border-style: solid;
+  border-color: $black transparent transparent transparent;
+  content: "";
+  pointer-events: none;
+  @include mq(md) {
+    top: myrem(29);
+    right: myrem(37);
+    border-width: 10px 6px 0 5px;
+  }
+}
+
+// 同意
+.p-contact__confirm-input {
+  display: none;
+}
+
+.p-contact__confirm-label {
+  margin: 0 auto;
+  width: fit-content;
+  display: block;
+  position: relative;
+  font-size: myrem(14);
+  font-weight: bold;
+  letter-spacing: myrem(0.5);
+  line-height: 2;
+  @include mq(md) {
+    font-size: myrem(16);
+  }
+}
+
+.p-contact__confirm-label::before {
+  content: "";
+  width: myrem(17);
+  height: myrem(17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: myrem(7);
+  left: myrem(-20);
+  background-color: $white;
+  border: 2px solid $black;
+  border-radius: myrem(3);
+  @include mq(md) {
+    top: myrem(9);
+    left: myrem(-27);
+  }
+}
+
+.p-contact__confirm-input:checked + label:before {
+  position: absolute;
+  content: "\2713";
+  color: $black;
+  background-color: $white;
+}
+
+.p-contact__confirm-underline {
+  color: $red;
+  border-bottom: 1px solid $red;
+}
+
+.p-contact__confirm-break::after {
+  content: "\A";
+  white-space: pre;
+  @include mq(md) {
+    white-space: nowrap;
+  }
+}
+
+// 送信ボタン
+.p-contact__form-send {
+  margin: myrem(24) auto 0;
+  width: myrem(226);
+  @include mq(md) {
+    margin: myrem(41) auto 0;
+    width: myrem(376);
+  }
+}

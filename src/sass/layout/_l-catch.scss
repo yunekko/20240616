@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.l-catch {
+  margin-top: myrem(7);
+  @include mq(md) {
+    margin-top: myrem(25);
+  }
+}

@@ -1,0 +1,82 @@
+@use "global" as *;
+
+// swiper
+.swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.p-voice__title {
+  @include mq(md) {
+    padding-left: myrem(14);
+  }
+}
+
+.p-voice__wrapper {
+  width: 100%;
+  margin-top: myrem(28);
+  @include mq(md) {
+    margin-top: myrem(33);
+  }
+}
+
+.p-voice__list {
+  transition-timing-function: linear;
+}
+
+.p-voice__item {
+  width: myrem(212.855);
+  position: relative;
+  @include mq(md) {
+    width: myrem(230);
+  }
+}
+
+.p-voice__item span {
+  padding: myrem(2) myrem(20) myrem(3) myrem(20);
+  position: absolute;
+  right: 0;
+  color: $white;
+  font-size: myrem(19);
+  font-weight: bold;
+  background-color: $blue1;
+  @include mq(md) {
+    font-size: myrem(22);
+  }
+}
+
+.p-voice__item-image {
+  width: 100%;
+}
+
+.p-voice__item-image img {
+  aspect-ratio: 215/142.5;
+  @include mq(md) {
+    aspect-ratio: 230/154;
+  }
+}
+
+.p-voice__item-body {
+  padding: myrem(12) myrem(13) myrem(17) myrem(13);
+  background-color: rgba(85, 141, 196, 0.15);
+  @include mq(md) {
+    padding: myrem(12) myrem(13) myrem(12) myrem(13);
+  }
+}
+
+.p-voice__item-title {
+  font-size: myrem(16);
+  font-weight: bold;
+  @include mq(md) {
+    font-size: myrem(18);
+  }
+}
+
+.p-voice__item-text {
+  padding-top: myrem(9);
+  font-size: myrem(14);
+  @include mq(md) {
+    padding-top: myrem(10);
+    font-size: myrem(16);
+    line-height: 1.7;
+  }
+}

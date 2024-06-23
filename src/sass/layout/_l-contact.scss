@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.l-contact {
+  padding-top: myrem(59);
+  padding-bottom: myrem(60);
+  @include mq(md) {
+    padding-top: myrem(87);
+    padding-bottom: myrem(90);
+  }
+}

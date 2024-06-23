@@ -1,0 +1,96 @@
+@use "global" as *;
+
+.p-catch__inner {
+  margin: 0 auto;
+  max-width: myrem(345);
+  width: 100%;
+  position: relative;
+  text-align: center;
+  @include mq(md) {
+    max-width: myrem(735);
+  }
+}
+
+.p-catch__inner::before {
+  content: "";
+  width: myrem(15);
+  height: myrem(35);
+  position: absolute;
+  top: 43%;
+  left: 2%;
+  background-image: url(../images/leaf__left.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(2);
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(75);
+    left: 4%;
+  }
+}
+
+.p-catch__inner::after {
+  content: "";
+  width: myrem(15);
+  height: myrem(35);
+  position: absolute;
+  top: 43%;
+  left: 92%;
+  background-image: url(../images/leaf__right.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(2);
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(75);
+    left: 94%;
+  }
+}
+
+.p-catch__top-text {
+  font-size: myrem(19.3);
+  font-weight: bold;
+  color: $blue1;
+  @include mq(md) {
+    font-size: myrem(38.6);
+    letter-spacing: myrem(1.4);
+  }
+}
+
+.p-catch__top-text span:not(.p-catch__top-text--percent) {
+  margin-right: myrem(4);
+  margin-left: myrem(2);
+  font-family: $font-sub;
+  font-size: myrem(54);
+  font-weight: bold;
+  font-style: italic;
+  @include mq(md) {
+    margin-right: myrem(-3);
+    margin-left: myrem(13);
+    font-size: myrem(105);
+  }
+}
+
+.p-catch__top-text--percent {
+  margin-right: myrem(13);
+  font-family: $font-sub;
+  font-size: myrem(33);
+  font-weight: bold;
+  font-style: italic;
+  @include mq(md) {
+    margin-right: myrem(14);
+    font-size: myrem(71);
+  }
+}
+
+.p-catch__bottom-text {
+  margin-top: myrem(-6);
+  font-size: myrem(17);
+  font-weight: bold;
+  color: $blue1;
+  @include mq(md) {
+    margin-top: myrem(-14);
+    padding-left: myrem(20);
+    font-size: myrem(34);
+  }
+}

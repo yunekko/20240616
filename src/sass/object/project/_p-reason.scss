@@ -1,0 +1,138 @@
+@use "global" as *;
+
+.p-reason {
+  background-color: rgba(214, 227, 1241, 0.4);
+}
+
+.p-reason__title {
+  @include mq(md) {
+    padding-left: myrem(12);
+  }
+}
+
+.p-reason__wrapper {
+  margin-top: myrem(14);
+  @include mq(md) {
+    margin-top: myrem(45);
+  }
+}
+
+.p-reason__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: myrem(156);
+  @include mq(md) {
+    row-gap: myrem(110);
+  }
+}
+
+.p-reason__item {
+  padding: myrem(16) myrem(29) myrem(128) myrem(16);
+  width: calc(361 / 375 * 100%);
+  position: relative;
+  background-color: $white;
+  @include mq(md) {
+    padding: myrem(22) myrem(193) myrem(24) myrem(234);
+    width: calc(1003 / 1400 * 100%);
+  }
+}
+
+.p-reason__item:nth-child(2) {
+  margin-right: 0;
+  margin-left: auto;
+  padding: myrem(16) myrem(10) myrem(141) myrem(16);
+  width: calc(340 / 375 * 100%);
+  @include mq(md) {
+    padding: myrem(24) myrem(224) myrem(29) myrem(195);
+    width: calc(1000 / 1400 * 100%);
+  }
+}
+
+.p-reason__item:nth-child(3) {
+  padding: myrem(6) myrem(13) myrem(141) myrem(16);
+  width: calc(346 / 375 * 100%);
+  @include mq(md) {
+    padding: myrem(13) myrem(192) myrem(20) myrem(232);
+    width: calc(1003 / 1400 * 100%);
+  }
+}
+
+.p-reason__item-head {
+  display: flex;
+}
+
+.p-reason__item-number {
+  font-family: $font-lato;
+  font-size: myrem(50);
+  font-weight: bold;
+  color: $blue4;
+  @include mq(md) {
+    font-size: myrem(64.09);
+  }
+}
+
+.p-reason__item-title {
+  margin-top: myrem(8);
+  margin-left: myrem(11);
+  font-size: myrem(22);
+  font-weight: bold;
+  @include mq(md) {
+    margin-top: myrem(15);
+    margin-left: myrem(26);
+    font-size: myrem(24);
+    letter-spacing: myrem(0.6);
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+}
+
+.p-reason__item-break {
+  content: "\A";
+  white-space: pre;
+  @include mq(md) {
+    content: "";
+  }
+}
+
+.p-reason__item-bottom {
+  padding-top: myrem(6);
+  font-size: myrem(16);
+  letter-spacing: myrem(-0.5);
+  line-height: 1.6;
+}
+
+.p-reason__image {
+  width: myrem(325);
+  position: absolute;
+  right: 0;
+  bottom: myrem(-130);
+  box-shadow: -0.157px 3px 20px 1px rgba(0, 0, 0, 0.25);
+  @include mq(md) {
+    width: myrem(360);
+    right: myrem(-200);
+    bottom: -21%;
+  }
+}
+
+.p-reason__image2 {
+  right: 0;
+  bottom: myrem(-115);
+  left: -6%;
+  @include mq(md) {
+    bottom: -21%;
+    left: myrem(-198);
+  }
+}
+
+.p-reason__image3 {
+  right: -4%;
+  bottom: myrem(-111);
+  @include mq(md) {
+    right: myrem(-200);
+    bottom: -25%;
+  }
+}
+
+.p-reason__image img {
+  aspect-ratio: 360/260;
+}

@@ -1,0 +1,166 @@
+@use "global" as *;
+
+.p-fv {
+  position: relative;
+}
+
+.p-fv__wrapper {
+  position: relative;
+  @include mq(md) {
+  }
+}
+
+.p-fv__button1 {
+  position: absolute;
+  top: myrem(63);
+  right: 3%;
+  @include mq(md) {
+    top: myrem(84);
+    right: 2%;
+  }
+}
+
+.p-fv picture {
+  position: relative;
+  z-index: -10;
+}
+
+.p-fv__inner1 {
+  width: 100%;
+  position: absolute;
+  top: 36.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  @include mq(md) {
+    top: 27.5%;
+  }
+}
+
+.p-fv__inner2 {
+  position: relative;
+}
+
+.p-fv__inner2::before {
+  content: "";
+  width: myrem(32);
+  height: myrem(1);
+  position: absolute;
+  top: -10%;
+  left: 51%;
+  background-color: $blue1;
+  transform: translateX(-50%) rotate(90deg);
+  @include mq(md) {
+    width: myrem(65);
+    height: myrem(2);
+    top: -11.6%;
+    left: 50%;
+  }
+}
+
+.p-fv__image {
+  width: myrem(125);
+  position: absolute;
+  top: -28%;
+  left: 63%;
+  @include mq(md) {
+    width: myrem(310);
+    top: 14%;
+    left: auto;
+    right: 1.5%;
+  }
+}
+
+.p-fv__image img {
+  aspect-ratio: 125/ 50;
+  @include mq(md) {
+    aspect-ratio: 310/120;
+  }
+}
+
+.p-fv__sub-title {
+  margin-left: myrem(7);
+  font-size: myrem(19);
+  font-weight: bold;
+  color: $blue1;
+  text-align: center;
+  @include mq(md) {
+    font-size: myrem(38);
+    letter-spacing: myrem(1.5);
+  }
+}
+
+.p-fv__title {
+  margin-left: myrem(13);
+  font-size: myrem(34);
+  font-weight: bold;
+  letter-spacing: myrem(1);
+  text-align: center;
+  @include mq(md) {
+    font-size: myrem(68);
+    letter-spacing: myrem(3);
+  }
+}
+
+.p-fv__cards {
+  margin: myrem(17) auto 0;
+  max-width: myrem(310);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: myrem(6);
+  @include mq(md) {
+    margin: myrem(14) auto 0;
+    max-width: myrem(746);
+    column-gap: myrem(32);
+  }
+}
+
+.p-fv__card {
+  padding: myrem(21) 0 myrem(20);
+  width: 32%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  background-color: $blue1;
+  font-size: myrem(12.855);
+  font-weight: bold;
+  border-radius: 50%;
+  @include mq(md) {
+    padding: myrem(46) 0 myrem(39);
+    width: 25%;
+    font-size: myrem(24);
+  }
+}
+
+.p-fv__card:nth-child(2) {
+  padding: myrem(24) 0 myrem(33);
+  @include mq(md) {
+    padding: myrem(54) 0 myrem(65);
+  }
+}
+
+.p-fv__card::after {
+  content: "";
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  border: 1px solid $white;
+  border-radius: 50%;
+}
+
+.p-fv__button2 {
+  margin: myrem(-29) auto 0;
+  width: myrem(245);
+  position: relative;
+  z-index: 10;
+  @include mq(md) {
+    margin: -2% auto 0;
+    width: myrem(426);
+  }
+}

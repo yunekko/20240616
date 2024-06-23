@@ -1,0 +1,105 @@
+@use "global" as *;
+
+.p-present {
+  position: relative;
+}
+
+.p-present img {
+  position: relative;
+  z-index: -100;
+  aspect-ratio: 358/ 200;
+  @include mq(md) {
+    aspect-ratio: 2800 / 804;
+  }
+}
+
+.p-present__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.p-present__inner-bottom {
+  top: 52%;
+  @include mq(md) {
+    top: 51%;
+  }
+}
+
+.p-present__text-box {
+  width: myrem(310);
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  @include mq(md) {
+    width: myrem(630);
+  }
+}
+
+.p-present__text-box::before {
+  content: "";
+  width: myrem(39);
+  height: myrem(1);
+  position: absolute;
+  top: 53%;
+  left: -1%;
+  background-color: $black;
+  transform: rotate(62deg);
+  @include mq(md) {
+    width: myrem(30);
+    top: 58%;
+    left: 1%;
+    transform: rotate(57deg);
+  }
+}
+
+.p-present__text-box::after {
+  content: "";
+  width: myrem(39);
+  height: myrem(1);
+  position: absolute;
+  top: 52%;
+  left: 90%;
+  background-color: $black;
+  transform: rotate(118deg);
+  @include mq(md) {
+    width: myrem(30);
+    top: 54%;
+    left: 95%;
+    transform: rotate(123deg);
+  }
+}
+
+.p-present__text {
+  padding-left: myrem(19);
+  font-size: myrem(16.515);
+  font-weight: bold;
+  @include mq(md) {
+    display: inline-block;
+    font-size: myrem(22);
+  }
+}
+
+.p-present__text--yellow {
+  margin-top: myrem(-4);
+  padding-left: myrem(16);
+  font-size: myrem(19.52);
+  font-weight: bold;
+  color: $yellow;
+  @include mq(md) {
+    padding: 0;
+    margin-left: myrem(-12);
+    display: inline-block;
+    font-size: myrem(26);
+  }
+}
+
+.p-present__button {
+  margin: myrem(9) auto 0;
+  width: myrem(246);
+  @include mq(md) {
+    margin-top: myrem(36);
+    width: myrem(425);
+  }
+}

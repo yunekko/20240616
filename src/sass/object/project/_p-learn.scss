@@ -1,0 +1,129 @@
+@use "global" as *;
+
+.p-learn__wrapper {
+  margin: myrem(25) auto 0;
+  padding: 0 myrem(15);
+  max-width: myrem(500);
+  width: 100%;
+  @include mq(md) {
+    margin: myrem(27) auto 0;
+    max-width: myrem(1030);
+  }
+}
+
+.p-learn__cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: myrem(10);
+  @include mq(md) {
+    flex-direction: row;
+    column-gap: myrem(26);
+  }
+}
+
+.p-learn__card {
+  padding: myrem(18) 0 myrem(21) myrem(7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: myrem(8);
+  background-color: rgba(72, 157, 225, 0.15);
+  border-radius: myrem(15);
+  @include mq(md) {
+    padding: myrem(2) 0 0 0;
+    width: 23%;
+    flex-direction: column;
+    row-gap: myrem(21);
+  }
+}
+
+.p-learn__card:nth-child(2) {
+  padding: myrem(17) 0 myrem(18) myrem(5);
+  column-gap: myrem(20);
+  @include mq(md) {
+    padding: 0 0 0 myrem(12);
+  }
+}
+
+.p-learn__card:nth-child(3) {
+  padding: myrem(19) 0 myrem(23) myrem(13);
+  column-gap: myrem(10);
+  @include mq(md) {
+    padding: 0 0 0 myrem(9);
+  }
+}
+
+.p-learn__card:nth-child(4) {
+  padding: myrem(13) 0 myrem(12) myrem(19);
+  column-gap: myrem(13);
+  @include mq(md) {
+    padding: myrem(24) 0 myrem(32) myrem(6);
+  }
+}
+
+.p-learn__card-image {
+  width: myrem(101.5);
+  @include mq(md) {
+    width: myrem(160);
+  }
+}
+
+.p-learn__card-image2 {
+  width: myrem(93);
+  @include mq(md) {
+    width: myrem(145);
+  }
+}
+
+.p-learn__card-image3 {
+  width: myrem(101);
+  @include mq(md) {
+    width: myrem(164);
+  }
+}
+
+.p-learn__card-image4 {
+  width: myrem(85);
+  @include mq(md) {
+    width: myrem(132);
+  }
+}
+
+.p-learn__card-image img {
+  aspect-ratio: 101.5/75;
+  @include mq(md) {
+    aspect-ratio: 160/118;
+  }
+}
+
+.p-learn__card-image2 img {
+  aspect-ratio: 93/81;
+  @include mq(md) {
+    aspect-ratio: 145/126;
+  }
+}
+
+.p-learn__card-image3 img {
+  aspect-ratio: 101/74;
+  @include mq(md) {
+    aspect-ratio: 164/121;
+  }
+}
+
+.p-learn__card-image4 img {
+  aspect-ratio: 85/88.5;
+  @include mq(md) {
+    aspect-ratio: 132/138;
+  }
+}
+
+.p-learn__card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: myrem(18);
+  font-weight: bold;
+  @include mq(md) {
+    row-gap: myrem(7);
+  }
+}

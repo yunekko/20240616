@@ -1,0 +1,161 @@
+@use "global" as *;
+
+.p-participant__title {
+  @include mq(md) {
+    padding-left: myrem(22);
+  }
+}
+
+.p-participant__inner {
+  margin-top: myrem(35);
+  padding-left: myrem(5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: myrem(40);
+  row-gap: myrem(91);
+  @include mq(md) {
+    margin-top: myrem(29);
+    padding-left: myrem(14);
+    column-gap: myrem(66);
+  }
+}
+
+.p-participant__graph {
+  position: relative;
+  width: myrem(237);
+  height: myrem(237);
+  border-radius: 50%;
+  @include mq(md) {
+    width: myrem(326);
+    height: myrem(326);
+  }
+}
+
+.p-participant__graph--age {
+  background-image: conic-gradient(
+    rgba(60, 117, 173, 0.25) 0deg 30deg,
+    rgba(239, 112, 0, 0.5) 30deg 229deg,
+    rgba(60, 117, 173, 0.25) 229deg 330deg,
+    rgba(85, 141, 196, 0.1) 330deg 360deg
+  );
+}
+
+.p-participant__graph--income {
+  background-image: conic-gradient(
+    rgba(60, 117, 173, 0.25) 0deg 115deg,
+    rgba(239, 112, 0, 0.5) 115deg 225deg,
+    rgba(60, 117, 173, 0.25) 225deg 308deg,
+    rgba(85, 141, 196, 0.1) 308deg 360deg
+  );
+}
+
+.p-participant__graph::before {
+  width: myrem(117);
+  height: myrem(117);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: myrem(18.98);
+  font-weight: bold;
+  border-radius: 50%;
+  color: $blue1;
+  background-color: $white;
+  @include mq(md) {
+    width: myrem(160.97);
+    height: myrem(160.97);
+    font-size: myrem(26);
+  }
+}
+
+.p-participant__graph--age::before {
+  content: "年齢";
+}
+
+.p-participant__graph--income::before {
+  width: myrem(133);
+  height: myrem(133);
+  content: "年収";
+  @include mq(md) {
+    width: myrem(180);
+    height: myrem(180);
+  }
+}
+
+.p-participant__percent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  font-size: myrem(18.98);
+  font-weight: bold;
+  @include mq(md) {
+    font-size: myrem(26);
+  }
+}
+
+.p-participant__percent--age40 {
+  position: absolute;
+  top: 36%;
+  left: -1%;
+  text-shadow: 2px 2px 2px $blue1, -2px -2px 2px $blue1, -2px 2px 2px $blue1,
+    2px -2px 2px $blue1, 2px 0 2px $blue1, -2px 0 2px $blue1, 0 2px 2px $blue1,
+    0 -2px 2px $blue1;
+}
+
+.p-participant__percent--age30 {
+  position: absolute;
+  top: 54%;
+  left: 75%;
+  text-shadow: 2px 2px 2px $orange, -2px -2px 2px $orange, -2px 2px 2px $orange,
+    2px -2px 2px $orange, 2px 0 2px $orange, -2px 0 2px $orange,
+    0 2px 2px $orange, 0 -2px 2px $orange;
+}
+
+.p-participant__percent--income800 {
+  position: absolute;
+  top: 42%;
+  left: -12%;
+  text-shadow: 2px 2px 2px $blue1, -2px -2px 2px $blue1, -2px 2px 2px $blue1,
+    2px -2px 2px $blue1, 2px 0 2px $blue1, -2px 0 2px $blue1, 0 2px 2px $blue1,
+    0 -2px 2px $blue1;
+}
+
+.p-participant__percent--income600 {
+  position: absolute;
+  top: 74%;
+  left: 38%;
+  text-shadow: 2px 2px 2px $orange, -2px -2px 2px $orange, -2px 2px 2px $orange,
+    2px -2px 2px $orange, 2px 0 2px $orange, -2px 0 2px $orange,
+    0 2px 2px $orange, 0 -2px 2px $orange;
+}
+
+.p-participant__percent span {
+  margin-top: myrem(-6);
+  font-size: myrem(29.2);
+  @include mq(md) {
+    margin-top: myrem(-13);
+    font-size: myrem(40);
+  }
+}
+
+.p-participant__text {
+  position: absolute;
+  top: 102%;
+  left: 29%;
+  font-size: myrem(18.98);
+  font-weight: bold;
+  text-align: center;
+  @include mq(md) {
+    font-size: myrem(26);
+    line-height: 1.2;
+  }
+}
+
+.p-participant__text--income {
+  left: 12%;
+}

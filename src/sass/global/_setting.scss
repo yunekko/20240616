@@ -1,0 +1,106 @@
+@use "sass:math";
+
+// インナー幅
+$innerWidth: 1024px;
+
+// 余白
+$padding-pc: 25px;
+$padding-sp: 20px;
+
+// フォント
+$font-main: "Noto Sans JP", sans-serif;
+$font-sub: "Noto Serif JP", serif;
+$font-lato: "Lato", sans-serif;
+
+// 色指定
+$black: #000;
+$white: #fff;
+$blue1: #1e588f;
+$blue2: #2a6eae;
+$blue3: #558dc4;
+$blue4: #e6eef6;
+$blue5: #6096c8;
+$blue6: #489de1;
+$gray1: #f6f6f6;
+$gray2: #a8a8a8;
+$orange: #ef7000;
+$yellow: #f7fe2f;
+$red: #da0000;
+
+// ブレイクポイント
+$breakpoints: (
+  sm: 600,
+  md: 768,
+  lg: 1024,
+  xl: 1440,
+);
+
+// フォントウェイト
+$font-weights: (
+  normal: 400,
+  medium: 500,
+  bold: 700,
+  black: 900,
+);
+
+// メディアクエリ
+$mediaquerys: (
+  sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
+  lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
+  xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
+);
+
+// メディアクエリを "@include mq(){}" で書くことができる
+@mixin mq($mediaquery: md) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}
+
+// line-height
+@mixin l_height($pixels, $height) {
+  font-size: $pixels * 1px;
+  line-height: $height / $pixels;
+}
+
+@mixin f_around($pixels, $height: false, $weight: false, $spacing: false) {
+  font-size: $pixels * 1px;
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $height {
+    line-height: $height / $pixels;
+  }
+
+  @if $spacing {
+    letter-spacing: ($spacing / 1000) * 1em;
+  }
+}
+
+// 呼び出し例
+// ＠include f_around(フォントサイズ18px, 行送り30 , 太さW6, トラッキング200)
+
+$z-index-values: (
+  "modal": 1000,
+  "dropdown": 900,
+  "tooltip": 800,
+  "overlay": 700,
+  "header": 600,
+  "sidebar": 500,
+);
+
+@mixin set-z-index($element) {
+  @if map-has-key($z-index-values, $element) {
+    z-index: map-get($z-index-values, $element);
+  } @else {
+    @warn "無効なz-index要素です: #{$element}";
+  }
+}
+
+// 使用例:
+// .my-modal {
+//   @include set-z-index("modal");
+// }

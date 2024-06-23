@@ -1,0 +1,190 @@
+@use "global" as *;
+
+.p-flow__title {
+  @include mq(md) {
+    padding-left: myrem(16);
+  }
+}
+
+.p-flow__wrapper {
+  margin: myrem(22) auto 0;
+  padding: 0 myrem(15);
+  max-width: myrem(375);
+  width: 100%;
+  @include mq(md) {
+    margin: myrem(38) auto 0;
+    padding-left: myrem(28);
+    max-width: myrem(1065);
+  }
+}
+
+.p-flow__cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: myrem(34);
+  position: relative;
+  @include mq(md) {
+    flex-direction: row;
+    column-gap: myrem(31);
+  }
+}
+
+.p-flow__cards::before {
+  content: "";
+  width: myrem(520);
+  height: myrem(2);
+  position: absolute;
+  top: 55%;
+  left: -59%;
+  background-color: $blue4;
+  transform: rotate(90deg);
+  z-index: -10;
+  @include mq(md) {
+    max-width: myrem(700);
+    width: 70%;
+    height: myrem(4);
+    top: 24%;
+    left: 14%;
+    transform: rotate(0deg);
+  }
+}
+
+.p-flow__card {
+  display: flex;
+  justify-content: space-between;
+  @include mq(md) {
+    width: calc(172.33 / 1000 * 100%);
+    flex-direction: column;
+  }
+}
+
+.p-flow__card-image {
+  padding: myrem(21) 0 myrem(18) 0;
+  width: calc(109.02 / 345 * 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $blue4;
+  border-radius: 50%;
+  @include mq(md) {
+    padding: myrem(36) 0 myrem(30) 0;
+    width: 100%;
+  }
+}
+
+.p-flow__card-image2 {
+  padding: 0 0 0 0;
+  @include mq(md) {
+    padding: myrem(63) 0 myrem(59) myrem(8);
+  }
+}
+.p-flow__card-image3 {
+  padding: 0 0 0 myrem(4);
+  @include mq(md) {
+    padding: myrem(48) 0 myrem(48) myrem(14);
+  }
+}
+.p-flow__card-image4 {
+  padding: 0 0 myrem(12) 0;
+  @include mq(md) {
+    padding: myrem(54) 0 myrem(60) myrem(11);
+  }
+}
+.p-flow__card-image5 {
+  padding: 0 0 myrem(7) 0;
+  @include mq(md) {
+    padding: myrem(40) 0 myrem(49) myrem(10);
+  }
+}
+
+.p-flow__card-image img {
+  width: myrem(46);
+  aspect-ratio: 46/69;
+  @include mq(md) {
+    width: myrem(74);
+    aspect-ratio: 74/109;
+  }
+}
+
+.p-flow__card-image2 img {
+  width: myrem(48);
+  aspect-ratio: 48/32;
+  background-color: $white;
+  @include mq(md) {
+    width: myrem(76);
+    aspect-ratio: 76/51;
+  }
+}
+
+.p-flow__card-image3 img {
+  width: myrem(57.5);
+  aspect-ratio: 57.5/48;
+  @include mq(md) {
+    width: myrem(93);
+    aspect-ratio: 93/78;
+  }
+}
+
+.p-flow__card-image4 img {
+  width: myrem(72);
+  aspect-ratio: 72/37.5;
+  @include mq(md) {
+    width: myrem(115);
+    aspect-ratio: 115/60;
+  }
+}
+
+.p-flow__card-image5 img {
+  width: myrem(53);
+  aspect-ratio: 53/53;
+  @include mq(md) {
+    width: myrem(85);
+    aspect-ratio: 85/85;
+  }
+}
+
+.p-flow__card-body {
+  width: calc(215 / 345 * 100%);
+  @include mq(md) {
+    padding-top: myrem(17);
+    width: 100%;
+  }
+}
+
+.p-flow__card-title {
+  margin-top: myrem(-3);
+  position: relative;
+  font-size: myrem(19);
+  font-weight: bold;
+  color: $blue1;
+  @include mq(md) {
+    font-size: myrem(22);
+    text-align: center;
+  }
+}
+
+.p-flow__card-title::after {
+  content: "";
+  width: myrem(29);
+  height: myrem(1);
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background-color: $blue1;
+  @include mq(md) {
+    width: myrem(35);
+    height: myrem(2);
+    top: 134%;
+    left: 41%;
+  }
+}
+
+.p-flow__card-text {
+  padding-top: myrem(21);
+  font-size: myrem(14);
+  @include mq(md) {
+    padding-top: myrem(28);
+    font-size: myrem(16);
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,24 @@
+@use "global" as *;
+
+.c-section-title {
+  text-align: center;
+  font-size: myrem(24);
+  font-weight: bold;
+  @include mq(md) {
+    font-size: myrem(42);
+  }
+}
+
+.c-section-title::before {
+  content: attr(data-en);
+  display: block;
+  font-family: $font-lato;
+  font-size: myrem(12);
+  font-weight: 700;
+  letter-spacing: myrem(0.8);
+  color: $blue1;
+  @include mq(md) {
+    font-size: myrem(20);
+    letter-spacing: myrem(1.4);
+  }
+}

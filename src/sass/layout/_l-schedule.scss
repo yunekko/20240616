@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.l-schedule {
+  padding-top: myrem(57);
+  padding-bottom: myrem(63);
+  @include mq(md) {
+    padding-top: myrem(102);
+    padding-bottom: myrem(94);
+  }
+}
