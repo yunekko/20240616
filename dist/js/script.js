@@ -27,22 +27,41 @@ jQuery(function ($) {
   });
 
   // ctaボタン
-  jQuery(function () {
-    var footer = $(".p-footer").innerHeight(); // footerの高さを取得
+  // var footer = $(".p-footer").innerHeight(); // footerの高さを取得
 
-    window.onscroll = function () {
-      var point = window.pageYOffset; // 現在のスクロール地点
-      var docHeight = $(document).height(); // ドキュメントの高さ
-      var dispHeight = $(window).height(); // 表示領域の高さ
+  // window.onscroll = function () {
+  //   var point = window.pageYOffset; // 現在のスクロール地点
+  //   var docHeight = $(document).height(); // ドキュメントの高さ
+  //   var dispHeight = $(window).height(); // 表示領域の高さ
 
-      if (point > docHeight - dispHeight - footer) {
-        // スクロール地点>ドキュメントの高さ-表示領域-footerの高さ
-        $(".p-cta__button1, .p-cta__button2").fadeOut();
-      } else {
-        $(".p-cta__button1, .p-cta__button2").fadeIn();
-      }
-    };
+  //   if (point > docHeight - dispHeight - footer) {
+  //     // スクロール地点>ドキュメントの高さ-表示領域-footerの高さ
+  //     $(".p-cta__button2").fadeOut();
+  //   } else {
+  //     $(".p-cta__button2").fadeIn();
+  //   }
+  // };
+
+  // ヘッダー背景色変更(FV過ぎたら)
+  $(window).on("scroll", function () {
+    if ($(".p-fv").height() < $(this).scrollTop()) {
+      $(".js-header").addClass("change-color");
+      $(".js-cta__button1").fadeOut();
+      $(".js-cta__button2").fadeIn();
+    } else {
+      $(".js-header").removeClass("change-color");
+      $(".js-cta__button1").fadeIn();
+      $(".js-cta__button2").fadeOut();
+    }
   });
+
+  // // $(window).on("scroll", function () {
+  // //   if ($(".p-footer").height() < $(this).scrollTop()) {
+  // //     $(".js-cta__button2").fadeOut();
+  // //   } else {
+  // //     $(".js-cta__button2").fadeIn();
+  // //   }
+  // // });
 
   // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動。ヘッダーの高さ考慮。)
   $(document).on("click", 'a[href*="#"]', function () {
@@ -110,19 +129,19 @@ jQuery(function ($) {
 const swiper = new Swiper(".swiper", {
   loop: true,
 
-  // autoplay: {
-  //   delay: 0,
-  //   pauseOnMouseEnter: true,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 0,
+    pauseOnMouseEnter: true,
+    disableOnInteraction: false,
+  },
 
   speed: 5000,
-
   slidesPerView: 1.7,
   spaceBetween: 20,
 
   breakpoints: {
     768: {
+      speed: 8000,
       slidesPerView: 5,
       spaceBetween: 30,
     },

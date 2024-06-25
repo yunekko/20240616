@@ -52,10 +52,10 @@
     <script src="./js/swiper-bundle.min.js"></script>
   </head>
   <body>
-    <header class="p-header">
+    <header class="p-header js-header">
       <div class="p-header__wrapper">
-        <h1 class="p-header__logo">
-          <a href="#">ASSIST seminar</a>
+        <h1 class="p-header__logo js-header">
+          <a href="index.html">ASSIST seminar</a>
         </h1>
         <button class="p-header__hamburger js-hamburger">
           <span></span>
@@ -64,7 +64,7 @@
         <nav class="p-header__nav js-drawer">
           <ul class="p-header__nav-list">
             <li
-              class="p-header__nav-item p-header__nav-accordion js-accordion-title"
+              class="p-header__nav-item p-header__nav-accordion js-header js-accordion-title"
             >
               <a href="#">開催予定のセミナー</a>
               <ul class="p-header__drop-list">
@@ -79,15 +79,15 @@
                 </li>
               </ul>
             </li>
-            <li class="p-header__nav-item">
+            <li class="p-header__nav-item js-header">
               <a href="#">資産運営コラム</a>
             </li>
-            <li class="p-header__nav-item">
+            <li class="p-header__nav-item js-header">
               <a href="#">アーカイブ動画</a>
             </li>
           </ul>
           <div class="p-header__nav-button">
-            <a href="#">
+            <a href="#contact">
               <span class="p-header__nav-mail"></span>お問い合わせ</a
             >
           </div>
@@ -97,24 +97,20 @@
     <main>
       <!-- CATボタン -->
       <div class="p-cta">
-        <div class="p-cta__button1">
-          <a class="c-button c-button--cta1" href="#">
+        <div class="p-cta__button1 js-cta__button1">
+          <a class="c-button c-button--cta1" href="#contact">
             <img src="./images/reservation.png" alt="カレンダーの画像" />
             予約はこちら</a
           >
         </div>
-        <div class="p-cta__button2">
-          <a class="c-button c-button--cta2" href="#">資料請求</a>
+        <div class="p-cta__button2 js-cta__button2">
+          <a class="c-button" href="#contact">予約はこちら</a>
         </div>
       </div>
 
       <!-- fv -->
       <section class="p-fv">
         <div class="p-fv__wrapper">
-          <div class="p-fv__button1">
-            <a class="c-button" href="#">予約はこちら</a>
-          </div>
-
           <picture>
             <source srcset="./images/fv__pc.jpg" media="(min-width: 768px)" />
             <img src="./images/fv__sp.jpg" alt="背景画像" />
@@ -658,7 +654,7 @@
       </section>
 
       <!-- 申し込み -->
-      <section class="p-contact l-contact">
+      <section class="p-contact l-contact" id="contact">
         <h3 class="p-contact__title fade-in fade-in-up" data-en="Contact">
           お申し込みはこちら
         </h3>

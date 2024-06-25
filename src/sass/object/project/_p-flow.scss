@@ -21,7 +21,7 @@
 .p-flow__cards {
   display: flex;
   flex-direction: column;
-  row-gap: myrem(34);
+  row-gap: myrem(31);
   position: relative;
   @include mq(md) {
     flex-direction: row;
@@ -59,41 +59,16 @@
 }
 
 .p-flow__card-image {
-  padding: myrem(21) 0 myrem(18) 0;
-  width: calc(109.02 / 345 * 100%);
+  width: myrem(109);
+  height: myrem(109);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: $blue4;
   border-radius: 50%;
   @include mq(md) {
-    padding: myrem(36) 0 myrem(30) 0;
-    width: 100%;
-  }
-}
-
-.p-flow__card-image2 {
-  padding: 0 0 0 0;
-  @include mq(md) {
-    padding: myrem(63) 0 myrem(59) myrem(8);
-  }
-}
-.p-flow__card-image3 {
-  padding: 0 0 0 myrem(4);
-  @include mq(md) {
-    padding: myrem(48) 0 myrem(48) myrem(14);
-  }
-}
-.p-flow__card-image4 {
-  padding: 0 0 myrem(12) 0;
-  @include mq(md) {
-    padding: myrem(54) 0 myrem(60) myrem(11);
-  }
-}
-.p-flow__card-image5 {
-  padding: 0 0 myrem(7) 0;
-  @include mq(md) {
-    padding: myrem(40) 0 myrem(49) myrem(10);
+    width: myrem(175);
+    height: myrem(175);
   }
 }
 

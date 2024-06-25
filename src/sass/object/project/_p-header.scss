@@ -15,6 +15,13 @@
   }
 }
 
+.p-header.change-color {
+  @include mq(md) {
+    background-image: none;
+    transition: 0.3s;
+  }
+}
+
 .p-header__wrapper {
   height: inherit;
   display: flex;
@@ -32,6 +39,14 @@
     font-size: myrem(28);
     letter-spacing: myrem(2);
     text-align: end;
+    transition: 0.1s;
+  }
+}
+
+.p-header__logo.change-color {
+  @include mq(md) {
+    color: $blue1;
+    transition: 1s;
   }
 }
 
@@ -159,6 +174,13 @@ body.active {
   }
 }
 
+.p-header__nav-item.change-color:not(:first-child)::after {
+  @include mq(md) {
+    background-color: $blue1;
+    transition: 1s;
+  }
+}
+
 .p-header__nav-item::after {
   content: "▶︎";
   width: myrem(20);
@@ -194,6 +216,14 @@ body.active {
     font-size: myrem(18);
     color: $white;
     border-bottom: none;
+    transition: 0.5s;
+  }
+}
+
+.p-header__nav-item.change-color a:not(.p-header__drop-item a) {
+  @include mq(md) {
+    color: $blue1;
+    transition: 1s;
   }
 }
 
@@ -225,24 +255,7 @@ body.active {
   padding: myrem(9) myrem(14) myrem(7) myrem(20);
   display: none;
   @include mq(md) {
-    padding: 0;
-    transform: scaleY(0);
-    transform-origin: top center;
-    transition: 0.4s;
-    background: rgb(255, 255, 255, 0.8);
-    position: absolute;
-    top: 100%;
-    left: myrem(-7);
-    width: 122%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.p-header__nav-item:hover .p-header__drop-list {
-  @include mq(md) {
-    transform: scaleY(1);
+    display: none;
   }
 }
 
@@ -250,20 +263,6 @@ body.active {
   position: relative;
   @include mq(md) {
     width: 100%;
-  }
-}
-
-.p-header__drop-item:not(:first-child)::before {
-  @include mq(md) {
-    content: "";
-    position: absolute;
-    width: myrem(2);
-    height: myrem(208);
-    background: $black;
-    position: absolute;
-    top: myrem(-104);
-    left: myrem(107);
-    transform: rotate(90deg);
   }
 }
 
@@ -286,9 +285,6 @@ body.active {
 
 .p-header__drop-item:not(:first-child) {
   margin-top: myrem(13);
-  @include mq(md) {
-    margin-top: 0;
-  }
 }
 
 .p-header__drop-item a {
@@ -296,9 +292,6 @@ body.active {
   width: 100%;
   display: inline-block;
   font-size: myrem(16);
-  @include mq(md) {
-    padding: myrem(14) 0 myrem(12) myrem(21);
-  }
 }
 
 .p-header__nav-button {

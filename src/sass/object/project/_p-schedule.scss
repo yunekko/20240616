@@ -57,7 +57,7 @@
 }
 
 .p-schedule__date {
-  padding: myrem(35) 0;
+  padding: myrem(16) 0;
   font-size: myrem(16);
   font-weight: bold;
   color: $white;
@@ -72,7 +72,6 @@
 }
 
 .p-schedule__date--short {
-  padding: myrem(16) 0;
   @include mq(md) {
     padding: myrem(16) 0 0 myrem(22);
   }
@@ -84,6 +83,7 @@
   font-weight: bold;
   color: $white;
   background-color: $blue5;
+  flex-grow: 1;
   @include mq(md) {
     padding: myrem(22) 0 myrem(27) myrem(19);
 
@@ -116,8 +116,13 @@
   font-size: myrem(14);
   @include mq(md) {
     padding-top: myrem(4);
+    padding-right: myrem(3);
     padding-left: myrem(4);
     font-size: myrem(16);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 }
 

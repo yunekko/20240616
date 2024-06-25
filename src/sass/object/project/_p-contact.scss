@@ -164,7 +164,8 @@ textarea {
   padding: 0 0 0 myrem(8);
   text-align: center;
   @include mq(md) {
-    margin-top: myrem(31);
+    width: 70%;
+    margin: myrem(31) auto 0;
   }
 }
 
@@ -325,20 +326,40 @@ select:invalid {
   border-radius: myrem(3);
   @include mq(md) {
     top: myrem(9);
-    left: myrem(-27);
+    left: myrem(24);
   }
 }
 
-.p-contact__confirm-input:checked + label:before {
+.p-contact__confirm-input + label::after {
+  content: "";
+  width: myrem(8);
+  height: myrem(18);
+  display: block;
   position: absolute;
-  content: "\2713";
-  color: $black;
-  background-color: $white;
+  top: 6%;
+  left: myrem(-13);
+  border-right: 5px solid $blue2;
+  border-bottom: 3px solid $blue2;
+  opacity: 0;
+  transform: rotate(45deg) translate3d(0, 2px, 0) scale3d(0.7, 0.7, 1);
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  @include mq(md) {
+    top: myrem(5);
+    left: myrem(32);
+  }
+}
+
+.p-contact__confirm-input:checked + label::after {
+  opacity: 1;
+  transform: rotate(45deg) scale3d(1, 1, 1);
 }
 
 .p-contact__confirm-underline {
   color: $red;
   border-bottom: 1px solid $red;
+  @include mq(md) {
+    margin-left: myrem(50);
+  }
 }
 
 .p-contact__confirm-break::after {

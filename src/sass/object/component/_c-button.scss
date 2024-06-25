@@ -13,7 +13,7 @@
   border: 3px solid $white;
   border-radius: myrem(40);
   @include mq(md) {
-    padding: myrem(13) myrem(13) myrem(9) myrem(40);
+    padding: myrem(11) myrem(35);
     column-gap: myrem(9);
     font-size: myrem(20);
   }
@@ -46,6 +46,7 @@
   flex-wrap: wrap;
   font-size: myrem(11.05);
   border-radius: myrem(10);
+  box-shadow: -0.157px 3px 20px 1px rgba(4, 0, 0, 0.25);
   @include mq(md) {
     padding: myrem(23) 0 myrem(21) myrem(3);
     font-size: myrem(20);
@@ -73,27 +74,6 @@
     width: myrem(20);
     height: myrem(20);
     font-size: myrem(11);
-  }
-}
-
-// 資料請求ボタン
-.c-button--cta2 {
-  padding: myrem(52) myrem(13) myrem(87) myrem(13);
-  position: relative;
-  background-color: $blue1;
-  writing-mode: vertical-lr;
-  border-radius: myrem(10);
-}
-
-.c-button--cta2::after {
-  padding-top: myrem(2);
-  padding-left: 0;
-  content: "▼";
-  position: absolute;
-  top: 77%;
-  color: $blue1;
-  @include mq(md) {
-    padding-top: myrem(6);
   }
 }
 
