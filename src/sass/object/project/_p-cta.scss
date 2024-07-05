@@ -14,12 +14,14 @@
 }
 
 .p-cta__button2 {
+  width: myrem(150);
   display: none;
   position: fixed;
   top: myrem(63);
   right: 3%;
   z-index: 80;
   @include mq(md) {
+    width: myrem(230);
     top: myrem(90);
     right: 1.4%;
   }

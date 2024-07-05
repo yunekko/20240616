@@ -26,42 +26,27 @@ jQuery(function ($) {
     return false;
   });
 
-  // ctaボタン
-  // var footer = $(".p-footer").innerHeight(); // footerの高さを取得
-
-  // window.onscroll = function () {
-  //   var point = window.pageYOffset; // 現在のスクロール地点
-  //   var docHeight = $(document).height(); // ドキュメントの高さ
-  //   var dispHeight = $(window).height(); // 表示領域の高さ
-
-  //   if (point > docHeight - dispHeight - footer) {
-  //     // スクロール地点>ドキュメントの高さ-表示領域-footerの高さ
-  //     $(".p-cta__button2").fadeOut();
-  //   } else {
-  //     $(".p-cta__button2").fadeIn();
-  //   }
-  // };
-
-  // ヘッダー背景色変更(FV過ぎたら)
+  // ヘッダー背景色変更(FV過ぎたら)修正
   $(window).on("scroll", function () {
-    if ($(".p-fv").height() < $(this).scrollTop()) {
+    var headerHeight = $(".js-header").height(); //js-headerの高さを取得
+    var contactOffset = $(".p-contact").offset().top; //contactの位置を取得
+    var scrollPosition = $(this).scrollTop(); //現在のスクロール位置を取得
+
+    if (scrollPosition > headerHeight) {
       $(".js-header").addClass("change-color");
       $(".js-cta__button1").fadeOut();
-      $(".js-cta__button2").fadeIn();
+
+      if (scrollPosition < contactOffset) {
+        $(".js-cta__button2").fadeIn();
+      } else {
+        $(".js-cta__button2").fadeOut();
+      }
     } else {
       $(".js-header").removeClass("change-color");
       $(".js-cta__button1").fadeIn();
       $(".js-cta__button2").fadeOut();
     }
   });
-
-  // // $(window).on("scroll", function () {
-  // //   if ($(".p-footer").height() < $(this).scrollTop()) {
-  // //     $(".js-cta__button2").fadeOut();
-  // //   } else {
-  // //     $(".js-cta__button2").fadeIn();
-  // //   }
-  // // });
 
   // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動。ヘッダーの高さ考慮。)
   $(document).on("click", 'a[href*="#"]', function () {

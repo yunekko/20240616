@@ -7,6 +7,7 @@
   top: 0;
   left: 0;
   z-index: 100;
+  background-color: transparent;
   background-image: url(../images/header__bg-sp.jpg);
   background-size: cover;
   @include mq(md) {
@@ -18,6 +19,7 @@
 .p-header.change-color {
   @include mq(md) {
     background-image: none;
+    background-color: rgb(255, 255, 255, 0.3);
     transition: 0.3s;
   }
 }
@@ -140,17 +142,24 @@ body.active {
   }
 }
 
-.p-header__nav-item:hover:before {
+.p-header__nav-item::before {
   @include mq(md) {
     content: "";
     width: 95%;
     height: myrem(2);
-    background-color: $blue1;
+    background-color: transparent;
     position: absolute;
     top: 73%;
     left: 1%;
     z-index: -100;
-    transition: 1s;
+    transition: 0.3s;
+  }
+}
+
+.p-header__nav-item:hover::before {
+  @include mq(md) {
+    content: "";
+    background-color: $blue1;
   }
 }
 

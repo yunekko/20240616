@@ -1,10 +1,10 @@
 @use "global" as *;
 
 .c-button {
-  padding: myrem(9) myrem(13) myrem(9) myrem(20);
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   column-gap: myrem(13);
   font-size: myrem(13.92);
   font-weight: bold;
@@ -13,7 +13,6 @@
   border: 3px solid $white;
   border-radius: myrem(40);
   @include mq(md) {
-    padding: myrem(11) myrem(35);
     column-gap: myrem(9);
     font-size: myrem(20);
   }
@@ -40,7 +39,7 @@
 
 // 予約ボタン(画像入り)
 .c-button--cta1 {
-  padding: myrem(9) 0 myrem(10) myrem(3);
+  padding: myrem(9) 0 myrem(10);
   justify-content: center;
   column-gap: myrem(2);
   flex-wrap: wrap;
@@ -48,7 +47,7 @@
   border-radius: myrem(10);
   box-shadow: -0.157px 3px 20px 1px rgba(4, 0, 0, 0.25);
   @include mq(md) {
-    padding: myrem(23) 0 myrem(21) myrem(3);
+    padding: myrem(23) 0 myrem(21);
     font-size: myrem(20);
     column-gap: myrem(5);
     row-gap: myrem(4);
@@ -77,16 +76,24 @@
   }
 }
 
+.c-button--cta2 {
+  padding: myrem(9) 0 myrem(9);
+  @include mq(md) {
+    padding: myrem(11) 0 myrem(11);
+  }
+}
+
 // 黒ボタン(無料セミナー)
 .c-button--black {
-  padding: myrem(15) myrem(13) myrem(16) myrem(20);
+  padding: myrem(15) 0 myrem(16);
   column-gap: myrem(4);
   font-size: myrem(14);
   letter-spacing: myrem(0.4);
+  text-align: center;
   background-color: $black;
   border-radius: myrem(10);
   @include mq(md) {
-    padding: myrem(20) myrem(13) myrem(19) myrem(55);
+    padding: myrem(20) 0 myrem(19);
     column-gap: myrem(11);
     font-size: myrem(22);
     letter-spacing: myrem(0.7);
@@ -107,15 +114,16 @@
 
 // 青ボタン
 .c-button--blue {
-  padding: myrem(11) 0 myrem(11) 0;
+  padding: myrem(11) 0 myrem(11);
   justify-content: center;
   font-size: myrem(16);
+  text-align: center;
   background-color: $blue2;
   border: none;
   border-radius: myrem(45);
 
   @include mq(md) {
-    padding: myrem(7) 0 myrem(10) 0;
+    padding: myrem(7) 0 myrem(10);
   }
 }
 
@@ -125,7 +133,7 @@
 
 // 黒ボタン
 .c-button--black2 {
-  padding: myrem(11) 0 myrem(11) myrem(10);
+  padding: myrem(11) 0 myrem(11) myrem(11);
   justify-content: center;
   font-size: myrem(16);
   letter-spacing: myrem(13);
@@ -134,7 +142,7 @@
   border-radius: myrem(45);
 
   @include mq(md) {
-    padding: myrem(8) 0 myrem(9) myrem(10);
+    padding: myrem(8) 0 myrem(9) myrem(11);
   }
 }
 
@@ -144,14 +152,14 @@
 
 // 問い合わせフォームボタン
 .c-button--blue2 {
-  padding: myrem(15) 0 myrem(15) 0;
+  padding: myrem(15) 0 myrem(15);
   justify-content: center;
   font-size: myrem(16);
   background-color: $blue2;
   border: none;
   border-radius: 0;
   @include mq(md) {
-    padding: myrem(23) 0 myrem(21) 0;
+    padding: myrem(23) 0 myrem(21);
     font-size: myrem(18);
   }
 }

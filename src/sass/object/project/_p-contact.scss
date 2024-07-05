@@ -22,6 +22,7 @@
   font-size: myrem(11);
   font-weight: 700;
   letter-spacing: myrem(0.8);
+  text-transform: capitalize;
   color: $white;
   @include mq(md) {
     font-size: myrem(20);
@@ -270,7 +271,7 @@ select:invalid {
 .p-contact__select-inner2 {
   width: 29%;
   @include mq(md) {
-    width: 31%;
+    width: 35%;
   }
 }
 

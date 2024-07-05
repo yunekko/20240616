@@ -37,13 +37,14 @@
   }
 }
 
-.p-present__text-box::before {
+.p-present__text-box::before,
+.p-present__text-box::after {
   content: "";
   width: myrem(39);
   height: myrem(1);
   position: absolute;
-  top: 53%;
-  left: -1%;
+  top: 27%;
+  left: -2%;
   background-color: $black;
   transform: rotate(62deg);
   @include mq(md) {
@@ -56,32 +57,22 @@
 
 .p-present__text-box::after {
   content: "";
-  width: myrem(39);
-  height: myrem(1);
-  position: absolute;
-  top: 52%;
+  top: 29%;
   left: 90%;
-  background-color: $black;
   transform: rotate(118deg);
   @include mq(md) {
-    width: myrem(30);
     top: 54%;
     left: 95%;
     transform: rotate(123deg);
   }
 }
 
-.p-present__text {
-  padding-left: myrem(19);
-  font-size: myrem(16.515);
-  font-weight: bold;
-  @include mq(md) {
-    display: inline-block;
-    font-size: myrem(22);
-  }
+.p-present__text-box-bottom::before,
+.p-present__text-box-bottom::after {
+  top: 46%;
 }
 
-.p-present__text--yellow {
+.p-present__text-box span {
   margin-top: myrem(-4);
   padding-left: myrem(16);
   font-size: myrem(19.52);
@@ -95,8 +86,25 @@
   }
 }
 
+.p-present__text {
+  margin-top: myrem(15);
+  padding-left: myrem(19);
+  font-size: myrem(16.515);
+  font-weight: bold;
+  line-height: 0.1;
+  @include mq(md) {
+    display: inline-block;
+    font-size: myrem(22);
+  }
+}
+
+.p-present__text-bottom {
+  margin-top: 0;
+  line-height: 1.5;
+}
+
 .p-present__button {
-  margin: myrem(9) auto 0;
+  margin: myrem(5) auto 0;
   width: myrem(246);
   @include mq(md) {
     margin-top: myrem(36);

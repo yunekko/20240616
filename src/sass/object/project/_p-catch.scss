@@ -57,7 +57,7 @@
   }
 }
 
-.p-catch__top-text span:not(.p-catch__top-text--percent) {
+.p-catch__top-text span {
   margin-right: myrem(4);
   margin-left: myrem(2);
   font-family: $font-sub;
@@ -71,7 +71,8 @@
   }
 }
 
-.p-catch__top-text--percent {
+.p-catch__top-text span::after {
+  content: "%";
   margin-right: myrem(13);
   font-family: $font-sub;
   font-size: myrem(33);
